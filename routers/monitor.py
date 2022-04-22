@@ -18,7 +18,7 @@ class MonitorRouter:
         try:
             return monitor_handler.get_all_monitors()
         except Exception as ex:
-            raise HTTPException(status_code=500, detail=ex)
+            raise HTTPException(status_code=ex.status_code, detail=ex.detail)
         
     @staticmethod
     @router.get("/{monitor_id}")
@@ -26,7 +26,7 @@ class MonitorRouter:
         try:
             return monitor_handler.get_monitor_by_id(monitor_id)
         except Exception as ex:
-            raise HTTPException(status_code=500, detail=ex)    
+            raise HTTPException(status_code=ex.status_code, detail=ex.detail)    
         
     @staticmethod
     @router.put("")
@@ -34,7 +34,7 @@ class MonitorRouter:
         try:
             return monitor_handler.create_monitor(monitor)
         except Exception as ex:
-            raise HTTPException(status_code=500, detail=ex)
+            raise HTTPException(status_code=ex.status_code, detail=ex.detail)
 
     @staticmethod
     @router.post("")
@@ -42,7 +42,7 @@ class MonitorRouter:
         try:
             return monitor_handler.update_monitor(monitor_id, monitor)
         except Exception as ex:
-            raise HTTPException(status_code=500, detail=ex)
+            raise HTTPException(status_code=ex.status_code, detail=ex.detail)
         
     @staticmethod
     @router.delete("")
@@ -50,7 +50,7 @@ class MonitorRouter:
         try:
             return monitor_handler.delete_monitor(monitor_id)
         except Exception as ex:
-            raise HTTPException(status_code=500, detail=ex)
+            raise HTTPException(status_code=ex.status_code, detail=ex.detail)
 
     # @router.get("/{item_id}")
     # async def read_item(item_id: str):
