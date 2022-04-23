@@ -16,7 +16,7 @@ class MonitorHandler:
                     },
                     "name": 1,
                     "description": 1,
-                    "collection_data": 1
+                    "collection_url": 1
             }}
         ]
         
@@ -39,7 +39,7 @@ class MonitorHandler:
                     },
                     "name": 1,
                     "description": 1,
-                    "collection_data": 1
+                    "collection_url": 1
             }}
         ]
         
