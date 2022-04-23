@@ -1,10 +1,12 @@
 from fastapi import FastAPI
-from routers import monitor
+from routers import monitor, execute
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 app.include_router(monitor.MonitorRouter.router)
+app.include_router(execute.ExecuteRouter.router)
+
 
 app.add_middleware(
     CORSMiddleware,

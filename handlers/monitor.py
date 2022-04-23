@@ -43,9 +43,9 @@ class MonitorHandler:
             }}
         ]
         
-        db_response = self.monitors_collection.aggregate(aggregation_pipeline)
-        if len(list(db_response)) > 0:
-            return list(db_response)[0]
+        db_response = list(self.monitors_collection.aggregate(aggregation_pipeline))
+        if len(db_response) > 0:
+            return db_response[0]
         raise HTTPException(status_code=400, detail="There is no monitor with this ID")
 
     def create_monitor(self, monitor: Monitor):
