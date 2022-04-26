@@ -31,18 +31,6 @@ def test_create_monitor():
     assert response.json()["acknowledged"] == True
     assert response.json()["inserted_id"] != None
 
-def test_update_monitor():
-    pass
-
-def test_update_monitor_inexistent_item():
-    pass
-
-def test_delete_monitor():
-    pass
-
-def test_delete_monitor_inexistent_item():
-    pass
-
 
 
     
